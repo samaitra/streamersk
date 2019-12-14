@@ -5,7 +5,7 @@ import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.windowing.time.Time
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010
 import org.apache.ignite.sink.flink.IgniteSink
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
     val env = StreamExecutionEnvironment.getExecutionEnvironment()
 
     // get input data by connecting to kafka
-    val text = env.addSource(FlinkKafkaConsumer011<String>(
+    val text = env.addSource(FlinkKafkaConsumer010<String>(
             appProperties.getProperty("topic"), SimpleStringSchema(), appProperties))
 
     // parse the data, group it, window it, and aggregate the counts
