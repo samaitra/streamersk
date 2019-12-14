@@ -49,11 +49,11 @@ dependencies {
     compile "org.apache.ignite:ignite-log4j:2.7.6"
     compile "org.apache.ignite:ignite-rest-http:2.7.6"
     compile "de.javakaffee:kryo-serializers:0.42"
-    compile "org.apache.flink:flink-java:${flinkVersion}"
-    compile "org.apache.flink:flink-streaming-java_${scalaBinaryVersion}:${flinkVersion}"
+    compile "org.apache.flink:flink-java:1.9.1"
+    compile "org.apache.flink:flink-streaming-java_2.11:1.9.1"
     compile "log4j:log4j:${log4jVersion}"
     compile "org.slf4j:slf4j-log4j12:${slf4jVersion}"
-    compile "org.apache.flink:flink-connector-kafka-0.11_${scalaBinaryVersion}:${flinkVersion}"
+    compile "org.apache.flink:flink-connector-kafka-0.11_2.11:1.9.1"
     testCompile "org.junit.jupiter:junit-jupiter-api:5.3.2"
     testCompile "org.junit.jupiter:junit-jupiter-params:5.3.2"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:5.3.2"
@@ -62,10 +62,6 @@ dependencies {
 
 
 applicationDefaultJvmArgs = ["-Dlog4j.configuration=log4j.properties"]
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.1'
-}
 
 // declare where to find the dependencies of your project
 repositories {
@@ -87,8 +83,8 @@ tasks.withType(JavaCompile) {
 }
 
 sourceSets {
-    main.java.srcDirs += 'src/main/kotlin/'
-    test.java.srcDirs += 'src/test/kotlin/'
+//    main.java.srcDirs += 'src/main/kotlin/'
+//    test.java.srcDirs += 'src/test/kotlin/'
     main.compileClasspath += configurations.flinkShadowJar
     main.runtimeClasspath += configurations.flinkShadowJar
     test.compileClasspath += configurations.flinkShadowJar
