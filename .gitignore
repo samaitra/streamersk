@@ -25,5 +25,46 @@ hs_err_pid*
 # idea
 .idea/*
 
-#gradle
-.gradle/*
+
+### Gradle
+.gradle
+build/
+performance/.gradle
+performance/build/
+gradle.properties
+
+# Ignore Gradle GUI config
+gradle-server.setting
+
+### Java
+*.class
+classes
+
+### Generated files
+src/generated/
+
+### JetBrains
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# OSX
+.DS_Store
+!/hooks/
+
+# oh-my-zsh
+.gradletasknamecache
+
+#Logging
+*.log
+*.log.gz
