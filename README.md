@@ -85,7 +85,7 @@ $ mvn clean package install -DskipTests
 
 ### Build the Flink program :
 ```
-$ ./gradlew clean build
+$ mvn clean package
 ```
 
 ### Submit the Flink program :
