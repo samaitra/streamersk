@@ -11,8 +11,6 @@ fun main (args: Array<String>) {
     val stream = env.fromElements("Saikat", "Denis", "Ivan", "Amol", "Samantha")
             .flatMap(MyMapper())
             .keyBy(0)
-
-
     stream.print()
     env.execute()
 }
