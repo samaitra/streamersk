@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     val igniteSink = sink(appProperties)
 
     // get the execution environment
-    val env = StreamExecutionEnvironment.createLocalEnvironment().setMaxParallelism(3);
+    val env = StreamExecutionEnvironment.getExecutionEnvironment()
 
     // get input data by connecting to kafka
     val text = env.addSource(FlinkKafkaConsumer010<String>(
@@ -33,7 +33,7 @@ fun main(args: Array<String>) {
             .keyBy(0)
             .timeWindow(Time.seconds(10))
             .sum(1)
-            .map(Formatter()).setParallelism(3)
+            .map(Formatter())
 
     windowCounts.addSink(igniteSink)
     env.execute("Stream Window Item Count")
