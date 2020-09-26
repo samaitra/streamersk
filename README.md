@@ -115,7 +115,7 @@ $ pip install kafka-python --user
 
 ### Use data_publisher.py
 To run a sample data publisher you can use the data_publisher.py which will read the data from 
-player.txt and publish data to kafka topic
+item.txt and publish data to kafka topic
 
 ```
 cd data

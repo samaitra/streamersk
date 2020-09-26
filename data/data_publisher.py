@@ -2,7 +2,7 @@ import time
 from kafka import KafkaProducer
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
-filename = "player.txt"
+filename = "item.txt"
 for _ in range(10000):
     with open(filename) as f:
         content = f.readlines()
