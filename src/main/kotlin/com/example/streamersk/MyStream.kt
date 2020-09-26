@@ -8,7 +8,7 @@ import org.apache.flink.util.Collector
 
 fun main() {
     val env = StreamExecutionEnvironment.getExecutionEnvironment()
-    val stream = env.fromElements("SaikatSaikat", "Denis", "Alok", "Alexey", "Ivan")
+    val stream = env.fromElements("12346", "1234436", "123461312312", "1212", "12")
     stream.flatMap(MyStrLen())
             .keyBy(0)
             .sum(1)

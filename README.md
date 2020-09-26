@@ -15,8 +15,8 @@ Go to the download directory.
 ```
 $ cd ~/Downloads        # Go to download directory
 $ tar xzf flink-*.tgz   # Unpack the downloaded archive
-$ mv flink-1.6.0 ~/     # copy flink to home dir 
-$ cd flink-1.6.0
+$ mv flink-1.9.1 ~/     # copy flink to home dir 
+$ cd flink-1.9.1
 ```
 
 ### Start a Local Flink Cluster
@@ -90,7 +90,7 @@ $ mvn clean package
 
 ### Submit the Flink program :
 ```
-$ ~/flink-1.6.0/bin/flink run ./build/libs/streamersk-1.0-SNAPSHOT.jar src/main/resources/application.properties
+$ ~/flink-1.9.1/bin/flink run ./target/streamersk-1.0-SNAPSHOT.jar src/main/resources/application.properties
 ```
 
 ### produce something into the topic (write something and hit enter)
@@ -101,8 +101,8 @@ $ ./bin/kafka-console-producer.sh --topic mytopic --broker-list localhost:9092
 If you are using `print()` The .out file will print the counts at the end of each time window as long as words are floating in, e.g.:
 ```
 $ tail -f log/flink-*-taskexecutor-*.out
-Saikat : 1
-Denis : 3
+12314213 : 1
+12314214 : 3
 ```
 
 ### Install pip & kafka-python
@@ -125,7 +125,7 @@ python data_publisher.py
 ### Ignite rest service
 To check the cache key values you can use the Ignite rest service 
 ```
-$ curl -X GET http://localhost:8080/ignite\?cmd\=getall\&k1\=Saikat\&cacheName\=testCache
+$ curl -X GET http://localhost:8080/ignite\?cmd\=getall\&k1\=12314213\&cacheName\=testCache
 ```
 
 ### Scan cache 
