@@ -47,7 +47,7 @@ $./bin/zookeeper-server-start.sh ./config/zookeeper.properties
 
 ### start broker
 ```
-./bin/kafka-server-start.sh ./config/server.properties 
+$./bin/kafka-server-start.sh ./config/server.properties 
 ```
 
 ### create topic “mytopic”
